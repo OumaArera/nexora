@@ -5,10 +5,17 @@ import {
   Quote, Filter, Search, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import { successStories, testimonials } from '../../data/success.stories';
+import ComingSoon from '../ComingSoon';
 
 const SuccessStories = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [showComingSoon, setShowComingSoon] = useState(false);
+  
+  const handleNavClick = (e) => {
+    e.preventDefault();
+    setShowComingSoon(true);
+  };
 
   const categories = [
     { id: 'all', label: 'All Stories', icon: Star },
@@ -266,7 +273,10 @@ const SuccessStories = () => {
               Join thousands of professionals who have transformed their careers and lives through our supportive community
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-green-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center space-x-2">
+              <button 
+                className="bg-white text-green-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center space-x-2"
+                onClick={handleNavClick}  
+              >
                 <Users className="w-5 h-5" />
                 <span>Join Community</span>
               </button>
@@ -296,6 +306,11 @@ const SuccessStories = () => {
             </button>
           </div>
         </div>
+          <ComingSoon
+            isOpen={showComingSoon}
+            onClose={() => setShowComingSoon(false)}
+            title="Join Community"
+          />
       </div>
     </div>
   );

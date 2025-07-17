@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Handshake, Heart, Shield, Users, Star, Award, CheckCircle, ArrowRight } from 'lucide-react';
+import ComingSoon from '../ComingSoon';
 
 const CommunityValues = () => {
+  const [showComingSoon, setShowComingSoon] = useState(false);
+  
+  const handleNavClick = (e) => {
+    e.preventDefault();
+    setShowComingSoon(true);
+  };
   const coreValues = [
     {
       icon: Handshake,
@@ -258,7 +265,10 @@ const CommunityValues = () => {
             Join a community that puts trust, collaboration, and mutual growth at the center of everything we do
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-green-600 px-8 py-3 rounded-lg font-medium hover:bg-green-50 transition-colors duration-200 flex items-center justify-center space-x-2">
+            <button 
+              className="bg-white text-green-600 px-8 py-3 rounded-lg font-medium hover:bg-green-50 transition-colors duration-200 flex items-center justify-center space-x-2"
+              onClick={handleNavClick} 
+            >
               <span>Join Our Community</span>
               <ArrowRight className="w-4 h-4" />
             </button>
@@ -267,6 +277,11 @@ const CommunityValues = () => {
             </button>
           </div>
         </div>
+          <ComingSoon
+            isOpen={showComingSoon}
+            onClose={() => setShowComingSoon(false)}
+            title="Join Community"
+          />
       </div>
     </div>
   );

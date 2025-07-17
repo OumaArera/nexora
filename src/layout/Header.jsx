@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import { 
     Menu, Users, Briefcase, Heart, 
     BookOpen, Search, UserPlus, Phone, 
-    Shield, Award, Handshake 
+    Shield, Award, Handshake, GraduationCap
 } from 'lucide-react';
 import Logo from './Logo';
 import DropdownMenu from './Dropdown.Menu';
 import MobileMenu from './Mobile.Menu';
+import ComingSoon from '../components/ComingSoon';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [isComingSoonOpen, setIsComingSoonOpen] = useState(false); // New state
 
   const navigationItems = [
     {
@@ -34,9 +36,7 @@ const Header = () => {
       icon: Briefcase,
       items: [
         { title: "Browse Professionals", description: "Find verified service providers", href: "/professionals/browse", icon: Search },
-        { title: "Formal Sector", description: "Consultants, specialists & experts", href: "/professionals/formal", icon: Briefcase },
-        { title: "Informal Sector", description: "Artisans, freelancers & skilled workers", href: "/professionals/informal", icon: Users },
-        { title: "Top Rated", description: "Highest rated professionals", href: "/professionals/top-rated", icon: Award }
+        { title: "Professional Training", description: "Get Professional Courses", href: "/professionals/training", icon: GraduationCap },
       ]
     },
     {
@@ -46,7 +46,6 @@ const Header = () => {
         { title: "Welfare Support", description: "Emergency & financial assistance", href: "/community/welfare", icon: Shield },
         { title: "Job Opportunities", description: "Latest projects & positions", href: "/community/jobs", icon: Briefcase },
         { title: "Networking Events", description: "Connect with professionals", href: "/community/events", icon: Users },
-        { title: "Training Programs", description: "Skill development & certification", href: "/community/training", icon: BookOpen },
         { title: "CSR Initiatives", description: "Community impact projects", href: "/community/csr", icon: Heart }
       ]
     }
@@ -54,6 +53,12 @@ const Header = () => {
 
   const handleDropdownToggle = (index) => {
     setOpenDropdown(openDropdown === index ? null : index);
+  };
+
+  // Handler for Join Community button
+  const handleJoinCommunity = (e) => {
+    e.preventDefault();
+    setIsComingSoonOpen(true);
   };
 
   return (
@@ -92,13 +97,13 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <a
-              href="/join"
+            <button
+              onClick={handleJoinCommunity}
               className="bg-green-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors duration-200 flex items-center space-x-2"
             >
               <UserPlus className="w-4 h-4" />
               <span>Join Community</span>
-            </a>
+            </button>
             
             <div className="flex items-center space-x-2 text-green-700">
               <Phone className="w-4 h-4" />
@@ -119,13 +124,13 @@ const Header = () => {
       {/* Mobile CTA Bar */}
       <div className="lg:hidden bg-green-50 px-4 py-3 border-t border-green-100">
         <div className="flex items-center justify-between">
-          <a
-            href="/join"
+          <button
+            onClick={handleJoinCommunity}
             className="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors duration-200 flex items-center space-x-2 text-sm"
           >
             <UserPlus className="w-4 h-4" />
             <span>Join Now</span>
-          </a>
+          </button>
           
           <div className="flex items-center space-x-2 text-green-700">
             <Phone className="w-4 h-4" />
@@ -148,6 +153,14 @@ const Header = () => {
           onClick={() => setOpenDropdown(null)}
         />
       )}
+
+      {/* Coming Soon Overlay */}
+      <ComingSoon
+        isOpen={isComingSoonOpen}
+        onClose={() => setIsComingSoonOpen(false)}
+        title="Join Community"
+        message="We're building something amazing! Our community platform will connect professionals across Kenya with exclusive networking opportunities, welfare support, and career growth resources."
+      />
     </header>
   );
 };

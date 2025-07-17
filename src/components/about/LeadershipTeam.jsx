@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Users, User, Linkedin, Mail, Phone, Award, Star, MapPin, Calendar, ArrowRight } from 'lucide-react';
 import { teamMembers, advisors } from '../../data/leaders.data';
+import ComingSoon from '../ComingSoon';
+
 
 const LeadershipTeam = () => {
+  const [showComingSoon, setShowComingSoon] = useState(false);
   
+  const handleNavClick = (e) => {
+    e.preventDefault();
+    setShowComingSoon(true);
+  };
 
   const coreValues = [
     { icon: Users, title: "Collaborative Leadership", description: "We lead by example and empower our team" },
@@ -223,7 +230,10 @@ const LeadershipTeam = () => {
             Be part of Kenya's fastest-growing professional network
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center gap-2">
+            <button 
+              className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center gap-2"
+              onClick={handleNavClick}  
+            >
               <Users className="w-5 h-5" />
               Join Community
             </button>
@@ -233,6 +243,11 @@ const LeadershipTeam = () => {
             </button>
           </div>
         </div>
+          <ComingSoon
+            isOpen={showComingSoon}
+            onClose={() => setShowComingSoon(false)}
+            title="Join Community"
+          />
       </div>
     </div>
   );

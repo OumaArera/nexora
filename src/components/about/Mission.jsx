@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Award, Target, Users, Heart, Shield, Lightbulb, ArrowRight } from 'lucide-react';
+import ComingSoon from '../ComingSoon';
 
 const Mission = () => {
+  const [showComingSoon, setShowComingSoon] = useState(false);
+  
+  const handleNavClick = (e) => {
+    e.preventDefault();
+    setShowComingSoon(true);
+  };
   const missionPoints = [
     {
       icon: Users,
@@ -67,7 +74,10 @@ const Mission = () => {
                 We believe every professional, whether in the formal or informal sector, deserves visibility, credibility, and sustainable income opportunities. Our mission is to create a digital ecosystem where talent meets opportunity seamlessly.
               </p>
               <div className="flex items-center space-x-4">
-                <button className="bg-green-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors duration-200 flex items-center space-x-2">
+                <button 
+                  className="bg-green-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors duration-200 flex items-center space-x-2"
+                  onClick={handleNavClick}
+                  >
                   <span>Join Our Mission</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
@@ -156,7 +166,10 @@ const Mission = () => {
             Join thousands of professionals who are already transforming their careers with Nexora
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-green-600 px-8 py-3 rounded-lg font-medium hover:bg-green-50 transition-colors duration-200">
+            <button 
+              className="bg-white text-green-600 px-8 py-3 rounded-lg font-medium hover:bg-green-50 transition-colors duration-200"
+              onClick={handleNavClick}  
+            >
               Create Your Profile
             </button>
             <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-green-600 transition-colors duration-200">
@@ -164,6 +177,12 @@ const Mission = () => {
             </button>
           </div>
         </div>
+          <ComingSoon
+            isOpen={showComingSoon}
+            onClose={() => setShowComingSoon(false)}
+            title="Join Community"
+            // message="We're working on powerful analytics tools to help you track your professional growth and community impact."
+          />
       </div>
     </div>
   );

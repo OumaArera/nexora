@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Users, Briefcase, Heart, Star,
   Search, UserPlus, BookOpen
 } from 'lucide-react';
+import ComingSoon from '../components/ComingSoon';
 
 const HeroSection = () => {
+  const [showComingSoon, setShowComingSoon] = useState(false);
+
+  const handleNavClick = (e) => {
+    e.preventDefault();
+    setShowComingSoon(true);
+  };
+
+
   return (
     <section className="relative bg-gradient-to-br from-green-700 via-green-600 to-green-800 text-white overflow-hidden">
       {/* Beautiful Background Pattern */}
@@ -65,7 +74,10 @@ const HeroSection = () => {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
+              <button 
+                className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
+                onClick={handleNavClick}  
+              >
                 <UserPlus className="w-5 h-5" />
                 <span>Join Community</span>
               </button>
@@ -127,6 +139,12 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
+          <ComingSoon
+            isOpen={showComingSoon}
+            onClose={() => setShowComingSoon(false)}
+            title="Join Community"
+            // message="We're working on powerful analytics tools to help you track your professional growth and community impact."
+          />
         </div>
       </div>
     </section>
