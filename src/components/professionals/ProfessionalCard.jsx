@@ -4,13 +4,6 @@ import ProfessionalGridCard from './ProfessionalGridCard';
 import Pagination from '../../services/Pagination';
 import { usePagination } from '../../hooks/usePagination';
 
-// const ProfessionalCard = ({ professional, viewMode }) => {
-//   if (viewMode === 'list') {
-//     return <ProfessionalListCard professional={professional} />;
-//   }
-  
-//   return <ProfessionalGridCard professional={professional} />;
-// };
 
 const ProfessionalCard = ({ professionals, viewMode }) => {
   const {

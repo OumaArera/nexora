@@ -4,6 +4,7 @@ import {
   Briefcase, Award, Clock, User
 } from 'lucide-react';
 import BioModal from './BioModal';
+import ContactOverlay from './ContactOverlay';
 
 const ProfessionalGridCard = ({ professional }) => {
   const [showContact, setShowContact] = useState(false);
@@ -85,22 +86,10 @@ const ProfessionalGridCard = ({ professional }) => {
           </div>
 
           {showContact && (
-            <div className="mt-4 p-4 bg-gray-50 rounded-md text-left">
-              <div className="space-y-2">
-                <div className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4 text-gray-600" />
-                  <a href={`tel:${professional.phone}`} className="text-green-600 hover:underline">
-                    {professional.phone}
-                  </a>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Mail className="w-4 h-4 text-gray-600" />
-                  <a href={`mailto:${professional.email}`} className="text-green-600 hover:underline">
-                    {professional.email}
-                  </a>
-                </div>
-              </div>
-            </div>
+            <ContactOverlay 
+              contact={{ phone: professional.phone, email: professional.email }} 
+              onClose={() => setShowContact(false)} 
+            />
           )}
         </div>
       </div>
