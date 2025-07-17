@@ -46,7 +46,7 @@ const WelfareSupport = () => {
       <InclusionDiversity />
       
       {/* Contact Support */}
-      <div className="bg-gradient-to-r from-green-800 to-green-500 text-white p-6 rounded-lg">
+      <div className="bg-gradient-to-r from-green-800 to-green-800 text-white p-6 rounded-lg">
         <div className="flex items-center mb-4">
           <Phone className="w-6 h-6 mr-3" />
           <h3 className="text-xl font-semibold">Need Immediate Support?</h3>

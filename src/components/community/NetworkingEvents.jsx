@@ -127,7 +127,7 @@ const NetworkingEvents = () => {
       )}
 
       {/* Call to Action */}
-      <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-lg p-8 text-center text-white mt-8">
+      <div className="bg-gradient-to-r from-green-800 to-green-700 rounded-lg p-8 text-center text-white mt-8">
         <Award className="w-12 h-12 mx-auto mb-4" />
         <h2 className="text-2xl font-bold mb-4">Ready to Expand Your Network?</h2>
         <p className="text-lg mb-6">Join thousands of professionals building meaningful connections</p>
