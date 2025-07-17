@@ -1,16 +1,10 @@
 import React from 'react';
 import { 
-  Shield, 
   Users, 
-  Phone, 
   BookOpen,
   HandHeart,
   ChevronRight
 } from 'lucide-react';
-import EmergencySupport from './EmergencySupport';
-import InsurancePartnership from './InsurancePartnership';
-import PeerSupport from './PeerSupport';
-import RecognitionRewards from './RecognitionRewards';
 
 
 const InclusionDiversity = () => {

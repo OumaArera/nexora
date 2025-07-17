@@ -22,13 +22,13 @@ const EventCard = ({ event, onRegister }) => {
 
   return (
     <div className="bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
-      <div className="p-6">
-        <div className="flex justify-between items-start mb-4">
-          <div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">{event.title}</h3>
+      <div className="p-4 sm:p-6">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+          <div className="flex-1">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{event.title}</h3>
             <p className="text-gray-600 text-sm mb-3">{event.description}</p>
           </div>
-          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getEventTypeColor(event.type)}`}>
+          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getEventTypeColor(event.type)} self-start sm:ml-4 mb-2 sm:mb-0`}>
             <span className="flex items-center gap-1">
               {getEventTypeIcon(event.type)}
               {event.type}
@@ -38,20 +38,20 @@ const EventCard = ({ event, onRegister }) => {
         
         <div className="space-y-2 mb-4">
           <div className="flex items-center text-sm text-gray-600">
-            <Calendar className="w-4 h-4 mr-2" />
-            {event.date}
+            <Calendar className="w-4 h-4 mr-2 flex-shrink-0" />
+            <span className="truncate">{event.date}</span>
           </div>
           <div className="flex items-center text-sm text-gray-600">
-            <Clock className="w-4 h-4 mr-2" />
-            {event.time}
+            <Clock className="w-4 h-4 mr-2 flex-shrink-0" />
+            <span className="truncate">{event.time}</span>
           </div>
           <div className="flex items-center text-sm text-gray-600">
-            <MapPin className="w-4 h-4 mr-2" />
-            {event.location}
+            <MapPin className="w-4 h-4 mr-2 flex-shrink-0" />
+            <span className="truncate">{event.location}</span>
           </div>
           <div className="flex items-center text-sm text-gray-600">
-            <User className="w-4 h-4 mr-2" />
-            {event.host}
+            <User className="w-4 h-4 mr-2 flex-shrink-0" />
+            <span className="truncate">{event.host}</span>
           </div>
         </div>
 
@@ -63,13 +63,13 @@ const EventCard = ({ event, onRegister }) => {
           ))}
         </div>
 
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
           <span className="text-sm text-gray-500">
             {event.registered}/{event.capacity} registered
           </span>
           <button
             onClick={() => onRegister(event.id)}
-            className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors"
+            className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors text-sm sm:text-base"
           >
             Register
           </button>
