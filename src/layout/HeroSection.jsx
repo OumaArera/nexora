@@ -6,7 +6,7 @@ import {
 
 const HeroSection = () => {
   return (
-    <section className="relative -top-25 bg-gradient-to-br from-green-700 via-green-600 to-green-800 text-white overflow-hidden">
+    <section className="relative bg-gradient-to-br from-green-700 via-green-600 to-green-800 text-white overflow-hidden">
       {/* Beautiful Background Pattern */}
       <div className="absolute inset-0 opacity-20">
         {/* Animated floating circles */}

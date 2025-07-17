@@ -8,7 +8,6 @@ import SocialMedia from './SocialMedia';
 import Newsletter from './Newsletter';
 import DeveloperAttribution from './DeveloperAttribution';
 
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
