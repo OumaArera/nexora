@@ -45,7 +45,7 @@ const Header = () => {
       items: [
         { title: "Welfare Support", description: "Emergency & financial assistance", href: "/community/welfare", icon: Shield },
         { title: "Job Opportunities", description: "Latest projects & positions", href: "/community/jobs", icon: Briefcase },
-        { title: "Networking Events", description: "Connect with professionals", href: "/community/events", icon: Users },
+        { title: "Networking Events", description: "Connect with professionals", href: "/community/networking-events", icon: Users },
         { title: "CSR Initiatives", description: "Community impact projects", href: "/community/csr", icon: Heart }
       ]
     }

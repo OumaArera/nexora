@@ -13,7 +13,7 @@ const QuickLinks = () => {
     { title: "Browse Professionals", href: "/professionals/browse", icon: Search },
     { title: "Join Community", href: "/join", icon: UserPlus },
     { title: "Job Opportunities", href: "/community/jobs", icon: Briefcase },
-    { title: "Training Programs", href: "/community/training", icon: BookOpen },
+    { title: "Training Programs", href: "/professionals/training", icon: BookOpen },
     { title: "Welfare Support", href: "/community/welfare", icon: Shield },
     { title: "Success Stories", href: "/about/stories", icon: Award }
   ];

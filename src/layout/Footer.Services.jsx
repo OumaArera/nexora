@@ -8,12 +8,12 @@ import {
 
 const Services = () => {
   const services = [
-    { title: "Professional Profiles", href: "/services/profiles", icon: Users },
+    { title: "Professional Profiles", href: "/professionals/browse", icon: Users },
     { title: "Service Matching", href: "/services/matching", icon: Handshake },
-    { title: "Skill Development", href: "/services/training", icon: BookOpen },
-    { title: "Community Networking", href: "/services/networking", icon: Users },
-    { title: "Welfare Programs", href: "/services/welfare", icon: Heart },
-    { title: "CSR Initiatives", href: "/services/csr", icon: Heart }
+    { title: "Skill Development", href: "/professionals/training", icon: BookOpen },
+    { title: "Community Networking", href: "/community/networking-events", icon: Users },
+    { title: "Welfare Programs", href: "/community/welfare", icon: Heart },
+    { title: "CSR Initiatives", href: "/community/csr", icon: Heart }
   ];
 
   return (

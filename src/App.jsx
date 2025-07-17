@@ -17,6 +17,7 @@ import CSRInitiatives from './components/community/CSRInitiatives';
 
 function App() {
 
+
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
@@ -32,7 +33,7 @@ function App() {
             <Route path="/professionals/training" element={<ProfessionalTraining />} />
             <Route path="/community/welfare" element={<WelfareSupport />} />
             <Route path="/community/jobs" element={<JobOpportunities />} />
-            <Route path="/community/events" element={<NetworkingEvents />} />
+            <Route path="/community/networking-events" element={<NetworkingEvents />} />
             <Route path="/community/csr" element={<CSRInitiatives />} />
             {/* <Route path="/leagues" element={<Leagues />} /> */}
             {/* <Route path="/game-tickets" element={<Tickets />} /> */}
