@@ -33,50 +33,54 @@ const PeerSupport = () => {
   };
   
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-      <div className="flex items-center mb-4">
-        <MessageCircle className="w-6 h-6 text-green-500 mr-3" />
-        <h3 className="text-xl font-semibold text-gray-800">Peer Support Programs</h3>
+    <div className="bg-white rounded-xl shadow-lg border border-green-100 p-6 mb-8">
+      <div className="flex items-center mb-6">
+        <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+          <MessageCircle className="w-6 h-6 text-green-600" />
+        </div>
+        <div>
+          <h3 className="text-xl font-bold text-gray-800">Peer Support Programs</h3>
+          <p className="text-sm text-gray-600">Connect, learn, and grow together</p>
+        </div>
       </div>
       
-      <div className="flex space-x-1 mb-4">
+      <div className="flex flex-wrap gap-2 mb-6">
         {Object.entries(supportPrograms).map(([key, program]) => (
           <button
             key={key}
             onClick={() => setActiveSupport(key)}
-            className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center ${
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 flex items-center ${
               activeSupport === key 
-                ? 'bg-green-500 text-white' 
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                ? 'bg-green-600 text-white shadow-lg' 
+                : 'bg-green-50 text-green-600 hover:bg-green-100'
             }`}
           >
             {program.icon}
-            <span className="ml-2 hidden sm:inline">{program.title}</span>
+            <span className="ml-2">{program.title}</span>
           </button>
         ))}
       </div>
       
-      <div className="bg-green-50 p-4 rounded-lg">
-        <h4 className="font-semibold text-green-800 mb-2">
+      <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl border border-green-200">
+        <h4 className="font-bold text-green-800 mb-2">
           {supportPrograms[activeSupport].title}
         </h4>
-        <p className="text-sm text-green-700 mb-3">
+        <p className="text-green-700 mb-4">
           {supportPrograms[activeSupport].description}
         </p>
-        <ul className="space-y-2 mb-4">
+        <ul className="space-y-2 mb-6">
           {supportPrograms[activeSupport].features.map((feature, index) => (
-            <li key={index} className="flex items-center text-sm text-green-600">
-              <CheckCircle className="w-4 h-4 mr-2" />
+            <li key={index} className="flex items-center text-green-700">
+              <CheckCircle className="w-4 h-4 mr-3 text-green-600" />
               {feature}
             </li>
           ))}
         </ul>
-        <button className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600 transition-colors">
+        <button className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-all duration-200 shadow-md hover:shadow-lg">
           Join Program
         </button>
       </div>
     </div>
   );
 };
-
 export default PeerSupport;

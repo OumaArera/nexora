@@ -9,27 +9,28 @@ const InsurancePartnership = () => {
   ];
   
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-      <div className="flex items-center mb-4">
-        <Shield className="w-6 h-6 text-blue-500 mr-3" />
-        <h3 className="text-xl font-semibold text-gray-800">Insurance Partnerships</h3>
+    <div className="bg-white rounded-xl shadow-lg border border-green-100 p-6 mb-8">
+      <div className="flex items-center mb-6">
+        <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+          <Shield className="w-6 h-6 text-green-600" />
+        </div>
+        <div>
+          <h3 className="text-xl font-bold text-gray-800">Insurance Partnerships</h3>
+          <p className="text-sm text-gray-600">Exclusive discounts for community members</p>
+        </div>
       </div>
       
-      <p className="text-gray-600 mb-4">
-        Access discounted insurance plans through our trusted partners, tailored for community members.
-      </p>
-      
-      <div className="space-y-3">
+      <div className="space-y-4">
         {insurancePartners.map((partner, index) => (
-          <div key={index} className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+          <div key={index} className="flex items-center justify-between p-5 bg-gradient-to-r from-green-50 to-green-100 rounded-xl border border-green-200 hover:shadow-md transition-all duration-200">
             <div>
-              <h4 className="font-semibold text-blue-800">{partner.name}</h4>
-              <p className="text-sm text-blue-600">{partner.coverage}</p>
+              <h4 className="font-bold text-green-800">{partner.name}</h4>
+              <p className="text-green-700">{partner.coverage}</p>
             </div>
             <div className="text-right">
-              <span className="text-lg font-bold text-blue-600">{partner.discount}</span>
-              <button className="block mt-1 text-blue-500 hover:text-blue-700 text-sm">
-                Learn More <ChevronRight className="w-4 h-4 inline" />
+              <span className="text-xl font-bold text-green-600">{partner.discount}</span>
+              <button className="mt-2 text-green-600 hover:text-green-700 font-semibold flex items-center">
+                Learn More <ChevronRight className="w-4 h-4 ml-1" />
               </button>
             </div>
           </div>
