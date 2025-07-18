@@ -13,7 +13,6 @@ const HeroSection = () => {
     setShowComingSoon(true);
   };
 
-
   return (
     <section className="relative bg-gradient-to-br from-green-700 via-green-600 to-green-800 text-white overflow-hidden">
       {/* Beautiful Background Pattern */}
@@ -106,7 +105,7 @@ const HeroSection = () => {
                 </div>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 space-y-3 mt-8 hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 space-y-3 mt-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20">
                 <div className="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center shadow-lg">
                   <Users className="w-6 h-6 text-green-700" />
                 </div>
@@ -120,7 +119,7 @@ const HeroSection = () => {
                 </div>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 space-y-3 -mt-4 hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 space-y-3 hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20">
                 <div className="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center shadow-lg">
                   <Heart className="w-6 h-6 text-green-700" />
                 </div>
@@ -129,7 +128,7 @@ const HeroSection = () => {
                 <div className="text-sm text-green-200">Active 24/7</div>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 space-y-3 mt-4 hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 space-y-3 mt-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20">
                 <div className="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center shadow-lg">
                   <BookOpen className="w-6 h-6 text-green-700" />
                 </div>
@@ -139,11 +138,11 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
+          
           <ComingSoon
             isOpen={showComingSoon}
             onClose={() => setShowComingSoon(false)}
             title="Join Community"
-            // message="We're working on powerful analytics tools to help you track your professional growth and community impact."
           />
         </div>
       </div>

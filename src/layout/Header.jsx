@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
     Menu, Users, Briefcase, Heart, 
-    BookOpen, Search, UserPlus, Phone, 
+    Search, UserPlus, Phone, 
     Shield, Award, Handshake, GraduationCap
 } from 'lucide-react';
 import Logo from './Logo';
